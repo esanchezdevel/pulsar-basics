@@ -10,6 +10,12 @@ Run the following command in your terminal to run a container within a standalon
 
 ### Pulsar commands:
 
+Enter into the docker container executing the following command:
+
+`docker exec -it pulsar-cluster bash`
+
+Once you are in the docker container, then you can run the following commands to get Pulsar data
+
 - List all tenants:
 
 `./bin/pulsar-admin tenants list`
