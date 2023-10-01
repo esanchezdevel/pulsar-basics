@@ -26,6 +26,30 @@ Run the following command in your terminal to run a container within a standalon
 
 `./bin/pulsar-admin schemas get persistent://<tenant>/<namespace>/<topic>`
 
+### Pulsar API
+
+**API Documentation:** `https://pulsar.apache.org/admin-rest-api/`
+
+- List all tenants:
+
+`curl -vv http://localhost:8080/admin/v2/tenants`
+
+- List all namespaces of one specific tenant:
+
+`curl -vv http://localhost:8080/admin/v2/namespaces/<tenant>`
+
+- List all persistent topics of each /tenant/namespace:
+
+`curl -vv http://localhost:8080/admin/v2/persistent/<tenant>/<namespace>`
+
+- List all NON persistent topics of each /tenant/namespace:
+
+`curl -vv http://localhost:8080/admin/v2/non-persistent/<tenant>/<namespace>`
+
+- List Schemas of one topic:
+
+`curl -vv http://localhost:8080/admin/v2/schemas/public/default/test-topic/schema`
+
 ### Pulsar notes:
 
 When we produce a message in a topic without specify the tenant and the namespace, the message will be produced in the tenant **public** and namespace **default**
