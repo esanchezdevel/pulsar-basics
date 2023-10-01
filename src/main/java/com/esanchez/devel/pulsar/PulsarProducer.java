@@ -28,6 +28,8 @@ public class PulsarProducer {
 		if (client != null) {
 			Producer<String> producer = null;
 			try {
+				// If no tenant and namespace are defined, the topic will be created in
+				// tenant=public and namespace=default
 				producer = client.newProducer(Schema.STRING)
 				        .topic(PULSAR_TOPIC)
 				        .create();
