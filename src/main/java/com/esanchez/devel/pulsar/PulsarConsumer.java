@@ -4,6 +4,7 @@ import org.apache.pulsar.client.api.Consumer;
 import org.apache.pulsar.client.api.Message;
 import org.apache.pulsar.client.api.PulsarClient;
 import org.apache.pulsar.client.api.PulsarClientException;
+import org.apache.pulsar.client.api.Schema;
 
 public class PulsarConsumer {
 
@@ -27,16 +28,16 @@ public class PulsarConsumer {
 		}
 		
 		if (client != null) {
-			Consumer consumer = null;
+			Consumer<String> consumer = null;
 			try {
-				consumer = client.newConsumer()
+				consumer = client.newConsumer(Schema.STRING)
 				        .topic(PULSAR_TOPIC)
 				        .subscriptionName(PULSAR_SUBSCRIPTION)
 				        .subscribe();
 				
 				while (true) {
 					  // Wait for a message
-					  Message msg = consumer.receive();
+					  Message<String> msg = consumer.receive();
 
 					  try {
 					      System.out.println("Message received: " + new String(msg.getData()));

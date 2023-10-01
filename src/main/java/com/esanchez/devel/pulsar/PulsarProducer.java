@@ -3,6 +3,7 @@ package com.esanchez.devel.pulsar;
 import org.apache.pulsar.client.api.Producer;
 import org.apache.pulsar.client.api.PulsarClient;
 import org.apache.pulsar.client.api.PulsarClientException;
+import org.apache.pulsar.client.api.Schema;
 
 public class PulsarProducer {
 
@@ -25,15 +26,15 @@ public class PulsarProducer {
 		}
 		
 		if (client != null) {
-			Producer<byte[]> producer = null;
+			Producer<String> producer = null;
 			try {
-				producer = client.newProducer()
+				producer = client.newProducer(Schema.STRING)
 				        .topic(PULSAR_TOPIC)
 				        .create();
 				
 				// You can then send messages to the broker and topic you specified:
 				String message = "This is a test message sent from JAVA client";
-				producer.send(message.getBytes());
+				producer.send(message);
 				
 				System.out.println("Message sent to Pulsar");
 			} catch (PulsarClientException e) {
