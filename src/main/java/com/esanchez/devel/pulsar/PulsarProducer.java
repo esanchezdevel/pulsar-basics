@@ -7,6 +7,7 @@ import org.apache.pulsar.client.api.Schema;
 
 public class PulsarProducer {
 
+	
 	private static final String PULSAR_HOST = "pulsar://localhost:6650";
 	private static final String PULSAR_TOPIC = "test-topic";
 	
