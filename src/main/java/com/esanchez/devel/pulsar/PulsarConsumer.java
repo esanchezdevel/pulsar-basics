@@ -9,7 +9,7 @@ import org.apache.pulsar.client.api.Schema;
 public class PulsarConsumer {
 
 	private static final String PULSAR_HOST = "pulsar://localhost:6650";
-	private static final String PULSAR_TOPIC = "test-topic";
+	private static final String PULSAR_TOPIC = "test-tenant/test-namespace/test-topic";
 	private static final String PULSAR_SUBSCRIPTION = "test-consumer-subscription";
 	
 	public static void main(String[] args) {
