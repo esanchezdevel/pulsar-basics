@@ -15,11 +15,11 @@ public class PulsarProducer {
 	
 	private static final String PULSAR_ADMIN_HOST = "http://localhost:8080";
 	private static final String PULSAR_ADMIN_ROLE = "admin-roles";
-	private static final String PULSAR_CLUSTER = "test-cluster";
+	private static final String PULSAR_CLUSTER = "standalone";
 	private static final String PULSAR_HOST = "pulsar://localhost:6650";
 	private static final String PULSAR_TENANT = "test-tenant";
 	private static final String PULSAR_NAMESPACE = "test-namespace";
-	private static final String PULSAR_TOPIC = "persistent://" + PULSAR_TENANT + "/" + PULSAR_NAMESPACE + "test-topic";
+	private static final String PULSAR_TOPIC = "persistent://" + PULSAR_TENANT + "/" + PULSAR_NAMESPACE + "/test-topic";
 	
 	public static void main(String[] args) {
 		System.out.println("Pulsar Producer");
