@@ -49,6 +49,8 @@ public class PulsarProducer {
 					Set<String> adminRoles = new HashSet<>();
 					adminRoles.add(PULSAR_ADMIN_ROLE);
 					
+					// We have to use an already existing cluster. The default cluster is
+					// "standalone"
 					Set<String> clusters = new HashSet<>();
 					clusters.add(PULSAR_CLUSTER);
 					

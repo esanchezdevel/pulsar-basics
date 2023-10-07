@@ -32,6 +32,10 @@ Once you are in the docker container, then you can run the following commands to
 
 `./bin/pulsar-admin schemas get persistent://<tenant>/<namespace>/<topic>`
 
+- List clusters:
+
+`bin/pulsar-admin clusters list`
+
 ### Pulsar API
 
 **API Documentation:** `https://pulsar.apache.org/admin-rest-api/`
