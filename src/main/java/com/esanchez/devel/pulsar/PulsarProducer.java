@@ -59,7 +59,7 @@ public class PulsarProducer {
 					admin.tenants().createTenant(PULSAR_TENANT, tenantInfo);	    
 				}
 				
-				if (!admin.namespaces().getNamespaces(PULSAR_TENANT).contains(PULSAR_NAMESPACE)) {
+				if (!admin.namespaces().getNamespaces(PULSAR_TENANT).contains(PULSAR_TENANT + "/" + PULSAR_NAMESPACE)) {
 					admin.namespaces().createNamespace(PULSAR_TENANT + "/" + PULSAR_NAMESPACE);
 				}
 			} catch (Exception e) {
